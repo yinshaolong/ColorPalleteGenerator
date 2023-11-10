@@ -15,7 +15,7 @@ def prompt_to_palette():
     query = request.form.get('query')
     colors = response_gen(query)
     app.logger.info(colors)
-    return colors
+    return {"colors":colors}
 @app.route('/')
 def index():
     return render_template("index.html")
