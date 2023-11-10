@@ -1,3 +1,5 @@
 .env
 demo.py
 .gitignore
+env
+__pycache__

@@ -1,6 +1,5 @@
 from IPython.display import Markdown, display
 from responseGenerator import response_gen as colorGen
-import json
 
 def display_colors(colors):
     #creates a markdown display of the colors as blocks
@@ -11,7 +10,7 @@ def display_colors(colors):
 
 def main():
     #convert the colorGen string into a list of colors
-    colors = json.loads(colorGen())
+    colors = colorGen()
     print(colors)
     display_colors(colors)
 

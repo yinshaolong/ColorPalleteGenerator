@@ -1,6 +1,6 @@
 def get_and_render_colors(input):
     return f'''
-    You are a color palette generating assistant that respons to text prompts for color pallettes.
+    You are a color palette generating assistant that responds to text prompts for color pallettes.
     You should generate color palettes that fit the theme, mood, or instructions in the prompt.
     The palettes should be between 2 and 8 colors.
 
