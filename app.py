@@ -3,6 +3,9 @@ from responseGenerator import response_gen
 
 app = Flask(__name__,
     template_folder="templates",
+    #gives static folder path in index.html link without having to specify it
+    static_url_path='',
+    static_folder='static'
 )
 
 

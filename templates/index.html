@@ -4,71 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Palette Generator</title>
-    <style>
-        h1 {
-            color: purple;
-        }
-        .container {
-        background-color: black;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        }
-
-        .color {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        cursor: pointer;
-        transition: 0.2s opacity;
-        }
-    </style>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Hello!</h1>
     <div class="container"></div>
     <!-- listen for form submission -->
     <form id="form">
         <input type="text" name="query">
-        <button>Submit</button>
+        <button class="submitButton">Submit</button>
     </form>
-    <script>
-        const form = document.querySelector("#form");
-        form.addEventListener("submit", (event) => {
-            // stops the form from submitting/referesing the page
-            event.preventDefault();
-            // form.elements gets all of the references to the form (i.e. query)
-           const queryForm = form.elements.query.value;
-            //send request
-            fetch("/palette", {
-                method: "POST",
-                headers: {
-                    // tells the server what type of data we are sending
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                // URLSearchParams is a built in class that allows us to create a query string
-                body: new URLSearchParams({
-                    query: queryForm
-                })
-            }).then((response) => {
-                return response.json();
-            }).then((data) => {
-                console.log(data.colors);
-                const colors = data.colors;
-                const container = document.querySelector(".container");
-                container.innerHTML = "";
-                colors.forEach((color) => {
-                    const div = document.createElement("div");
-                    //gives div the class of color
-                    div.classList.add("color")
-                    div.style.backgroundColor = color;
-                    //use side ticks instead of single quotes
-                    div.style.width = `calc(100%/ ${colors.length})`;
-                    container.appendChild(div);
-                })
-            })
-        })
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

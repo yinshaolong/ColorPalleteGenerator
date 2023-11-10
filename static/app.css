@@ -1,0 +1,64 @@
+/* get rid of margins on screen */
+html,
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.color {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: 0.3s opacity;
+}
+
+/* when you click over the color, it will be slightly transparent */
+.color:active {
+    opacity: 0.8;
+}
+
+.color span {
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*moving 50% of the form element to the left and top*/
+    transform: translate(-50%, -50%);
+}
+
+#form input[type="text"] {
+    border: 2px solid white;
+    font-size: 1rem;
+    outline: 0;
+    background-color: #f2f2f2;
+    height: 1.6rem;
+    width: 20rem;
+}
+
+.submitButton {
+    background-color: #ff9900ad;
+    height: 2rem;
+    width: 5rem;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    /*delay the transition of the hover to opaque*/
+    transition: 0.2s opacity;
+}
+
+.submitButton:hover {
+    opacity: 0.8;
+}
