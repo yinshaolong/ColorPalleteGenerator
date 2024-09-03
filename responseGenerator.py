@@ -12,7 +12,7 @@ def response_gen(query):
     prompt = f"{get_prompt()}{query}\nA: "
     response = openai.completions.create(
         prompt=prompt,
-        model="gpt-3.5-turbo-instruct",
+        model="gpt-4o-mini",
         max_tokens=200,
         stop="11."
     )
