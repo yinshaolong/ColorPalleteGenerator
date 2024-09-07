@@ -9,16 +9,16 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI()
 
-def get_prompt():
-    with open("promptColor.txt") as f:
-        return f.read()
+# def get_prompt():
+#     with open("promptColor.json") as f:
+#         return json.load(f)
     
 
 def response_gen(query):
-    # query = {"role" : "user", "'Convert the following verbal description of a color palette into a list of colors": query}
-    # prompt = json.loads(get_prompt())
+    # prompt = get_prompt()
+    # query = {"role" : "user", "content":f'Convert the following verbal description of a color palette into a list of colors: {query}'}
     # prompt.append(query)
-    # print(prompt)
+    # print(type(prompt), prompt)
     response = client.chat.completions.create(
         model = "gpt-4o-mini",
         messages = [
